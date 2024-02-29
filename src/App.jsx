@@ -87,25 +87,35 @@ function App() {
           />
         </label>
       </div>
-      <div className='grid grid-cols-auto-fill-400 gap-4 text-center'>
-        {cards.map((card) => (
-          <a
-            href={card.scryfall_uri}
-            target='_blank'
-            rel='noopener noreferrer'
-            key={card.id}>
-            <img
-              className='w-full'
-              src={
-                card.image_uris?.border_crop ||
-                card.card_faces[0].image_uris.border_crop
-              }
-              alt={card.name}
-            />
-            <span className='mx-auto items-center'>{card.name}</span>
-          </a>
-        ))}
-      </div>
+      {birthMonth && birthDay ? (
+        cards.length > 0 ? (
+          <div className='grid grid-cols-auto-fill-400 gap-4 text-center'>
+            {cards.map((card) => (
+              <a
+                href={card.scryfall_uri}
+                target='_blank'
+                rel='noopener noreferrer'
+                key={card.id}>
+                <img
+                  className='w-full'
+                  src={
+                    card.image_uris?.border_crop ||
+                    card.card_faces[0].image_uris.border_crop
+                  }
+                  alt={card.name}
+                />
+                <span className='items-center'>{card.name}</span>
+              </a>
+            ))}
+          </div>
+        ) : (
+          <div className='text-center mt-12'>
+            <p>
+              I&apos;m afraid there are no cards with your birthday on them.
+            </p>
+          </div>
+        )
+      ) : null}
     </div>
   );
 }
