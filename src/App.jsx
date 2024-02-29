@@ -1,11 +1,6 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 
-const api = axios.create({
-  baseURL: 'https://api.scryfall.com',
-  timeout: 100,
-});
-
 function App() {
   const [birthMonth, setBirthMonth] = useState(null);
   const [birthDay, setBirthDay] = useState(null);
@@ -13,11 +8,11 @@ function App() {
   const [data, setData] = useState(null);
 
   const fetchCards = async (url) => {
-    let response = await api.get(url);
+    let response = await axios.get(url);
     let data = response.data.data;
 
     while (response.data.has_more) {
-      response = await api.get(response.data.next_page);
+      response = await axios.get(response.data.next_page);
       data = [...data, ...response.data.data];
     }
 
@@ -26,9 +21,9 @@ function App() {
 
   useEffect(() => {
     if (!data) {
-      fetchCards(`/cards/search?q=is%3Adatestamped+date%3Cstx`).then((data) =>
-        setData(data)
-      );
+      fetchCards(
+        `https://api.scryfall.com/cards/search?q=is%3Adatestamped+date%3Cstx`
+      ).then((data) => setData(data));
     }
   }, [data]);
 
