@@ -68,7 +68,7 @@ function App() {
   return (
     <div className='mx-auto items-center mt-5'>
       <div className='text-center'>
-        <h1 className='text-4xl'>Birthday Prerelease Promos</h1>
+        <h1 className='text-4xl'>Birthday Date-stamped Promos</h1>
       </div>
       <div className='my-4 mx-auto items-center text-center'>
         <label>
