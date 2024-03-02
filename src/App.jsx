@@ -6,6 +6,7 @@ function App() {
   const [birthDay, setBirthDay] = useState(null);
   const [cards, setCards] = useState([]);
   const [data, setData] = useState(null);
+  const [loading, setLoading] = useState(false);
 
   const fetchCards = async (url) => {
     let response = await axios.get(url);
@@ -21,9 +22,13 @@ function App() {
 
   useEffect(() => {
     if (!data) {
+      setLoading(true);
       fetchCards(
         `https://api.scryfall.com/cards/search?q=is%3Adatestamped+date%3Cstx`
-      ).then((data) => setData(data));
+      ).then((data) => {
+        setData(data);
+        setLoading(false);
+      });
     }
   }, [data]);
 
@@ -88,7 +93,11 @@ function App() {
         </label>
       </div>
       {birthMonth && birthDay ? (
-        cards.length > 0 ? (
+        loading ? (
+          <div className='text-center mt-12'>
+            <p>Loading...</p>
+          </div>
+        ) : cards.length > 0 ? (
           <div className='grid grid-cols-auto-fill-400 gap-4 text-center'>
             {cards.map((card) => (
               <a

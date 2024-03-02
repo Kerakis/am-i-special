@@ -1,4 +1,4 @@
-# Birthday Prerelease Promos
+# Birthday Date-stamped Promos
 
 This site fetches card data from the Scryfall API, filters the date-stamped promo cards based on the user's birth month and day, and displays the images of the filtered cards.
 
