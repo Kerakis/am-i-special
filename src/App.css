@@ -6,27 +6,27 @@
  * defaults (preflight strips headings to inherited size/weight).
  */
 @layer base {
-  html {
-    @apply bg-white text-[#6b6375] dark:bg-[#16171d] dark:text-gray-400;
-    color-scheme: light dark;
-    font-family: system-ui, 'Segoe UI', Roboto, sans-serif;
-    font-size: 18px;
-    line-height: 1.45;
-    letter-spacing: 0.18px;
-    font-synthesis: none;
-    text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
+	html {
+		@apply bg-white text-[#6b6375] dark:bg-[#16171d] dark:text-gray-400;
+		color-scheme: light dark;
+		font-family: system-ui, 'Segoe UI', Roboto, sans-serif;
+		font-size: 18px;
+		line-height: 1.45;
+		letter-spacing: 0.18px;
+		font-synthesis: none;
+		text-rendering: optimizeLegibility;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+	}
 
-  @media (max-width: 1024px) {
-    html {
-      font-size: 16px;
-    }
-  }
+	@media (max-width: 1024px) {
+		html {
+			font-size: 16px;
+		}
+	}
 
-  h1,
-  h2 {
-    @apply font-medium text-[#08060d] dark:text-gray-100;
-  }
+	h1,
+	h2 {
+		@apply font-medium text-[#08060d] dark:text-gray-100;
+	}
 }

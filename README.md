@@ -14,7 +14,7 @@ The app follows Scryfall's [API guidelines](https://scryfall.com/docs/api):
 - **`Accept: application/json`** is sent on every request.
 - **Rate limiting**: requests are spaced ~100 ms apart (the search returns ~1,700 cards across ~10 pages).
 - **Caching**: results are cached in `localStorage` for 24 hours, so repeat visits don't re-fetch.
-- **User-Agent**: browsers forbid scripts from setting the `User-Agent` header, so a custom one is *not* sent (the attempt would be silently dropped) — the visitor's own browser UA is used. Sending a custom UA would require routing requests through a server-side proxy.
+- **User-Agent**: browsers forbid scripts from setting the `User-Agent` header, so a custom one is _not_ sent (the attempt would be silently dropped) — the visitor's own browser UA is used. Sending a custom UA would require routing requests through a server-side proxy.
 
 All of the above lives in [`src/lib/scryfall.ts`](src/lib/scryfall.ts) and is covered by tests.
 
