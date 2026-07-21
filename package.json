@@ -26,7 +26,7 @@
 		"typescript7": "npm:typescript@^7.0.2",
 		"vite": "^8.1.4",
 		"vitest": "^4.1.10",
-		"@tailwindcss/vite": "^4.3.2",
+		"@tailwindcss/vite": "^4.3.3",
 		"eslint": "^10.7.0",
 		"eslint-config-prettier": "^10.1.8",
 		"eslint-plugin-svelte": "^3.20.0",
