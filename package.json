@@ -27,7 +27,7 @@
 		"vite": "^8.1.5",
 		"vitest": "^4.1.10",
 		"@tailwindcss/vite": "^4.3.3",
-		"eslint": "^10.7.0",
+		"eslint": "^10.8.0",
 		"eslint-config-prettier": "^10.1.8",
 		"eslint-plugin-svelte": "^3.22.0",
 		"prettier": "^3.9.6",
